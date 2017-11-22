@@ -3,6 +3,10 @@
 # It's helpful, but not entirely necessary to understand cron before proceeding.
 # http://en.wikipedia.org/wiki/Cron
 
+every 1.day, at: '6 am' do
+  rake 'companies:create'
+end
+
 # Example:
 #
 # set :output, "/path/to/my/cron_log.log"
