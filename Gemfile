@@ -54,4 +54,5 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'chartkick'
+gem 'faker'
 gem 'whenever', require: false
