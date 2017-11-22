@@ -56,6 +56,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bootstrap-sass'
 gem 'chartkick'
 gem 'faker'
+gem 'friendly_id', '~> 5.2.0'
 gem 'jquery-rails'
 gem 'whenever', require: false
 

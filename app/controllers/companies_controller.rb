@@ -53,7 +53,7 @@ class CompaniesController < ApplicationController
   private
 
   def set_company
-    @company = Company.not_deleted.find(params[:id])
+    @company = Company.not_deleted.friendly.find(params[:id])
   end
 
   def company_params
