@@ -4,9 +4,17 @@ one:
   name: MyString
   comment: MyLongerText
   active: false
-  deleted: 2017-11-22 22:03:59
 
 two:
+  name: MyString
+  comment: MyText
+  active: false
+
+valid:
+  name: A valid name
+  comment: A valid short comment
+
+deleted:
   name: MyString
   comment: MyText
   active: false

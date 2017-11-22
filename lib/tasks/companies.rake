@@ -8,5 +8,4 @@ namespace :companies do
       comment: fake_company.bs
     )
   end
-
 end

@@ -2,7 +2,7 @@ require 'test_helper'
 
 class CompanyTest < ActiveSupport::TestCase
   def setup
-    @company = Company.new(name: 'Test', comment: 'A short comment')
+    @company = companies(:valid)
   end
 
   test 'valid company' do
@@ -25,5 +25,17 @@ class CompanyTest < ActiveSupport::TestCase
     @company.comment = 'abc'
     refute @company.valid?
     assert_not_nil @company.errors[:comment]
+  end
+
+  test 'active scope does not include deleted company' do
+    deleted = companies(:deleted)
+
+    assert_equal 0, Company.not_deleted.where(id: deleted.id).count
+  end
+
+  test 'deleted scope includes deleted company' do
+    deleted = companies(:deleted)
+
+    assert_equal 1, Company.deleted.where(id: deleted.id).count
   end
 end

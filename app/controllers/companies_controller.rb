@@ -4,7 +4,7 @@ class CompaniesController < ApplicationController
   # GET /companies
   # GET /companies.json
   def index
-    @companies = Company.all
+    @companies = Company.not_deleted
   end
 
   # GET /companies/1
@@ -53,7 +53,7 @@ class CompaniesController < ApplicationController
   private
 
   def set_company
-    @company = Company.find(params[:id])
+    @company = Company.not_deleted.find(params[:id])
   end
 
   def company_params
