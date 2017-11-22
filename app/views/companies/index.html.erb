@@ -1,35 +1,53 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Companies</h1>
+<div class="row">
+  <div class="col-md-6">
+    <h1>Companies</h1>
+  </div>
+</div>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>Name</th>
-      <th>Comment</th>
-      <th>Active</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="row">
+  <div class="col-md-8">
 
-  <tbody>
-    <% @companies.each_with_index do |company, i| %>
-      <tr>
-        <td><%= @companies.offset + i+1 %>
-        <td><%= company.name %></td>
-        <td><%= company.comment %></td>
-        <td><%= company.active %></td>
-        <td><%= link_to 'Show', company %></td>
-        <td><%= link_to 'Edit', edit_company_path(company) %></td>
-        <td><%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Comment</th>
+          <th>Active</th>
+          <th></th>
+        </tr>
+      </thead>
 
-<%= will_paginate @companies %>
+      <tbody>
+        <% @companies.each_with_index do |company, i| %>
+          <tr>
+            <td><%= @companies.offset + i+1 %>
+            <td>
+              <%= link_to company do %>
+                <%= company.name %>
+              <% end %>
+            </td>
+            <td><%= company.comment %></td>
+            <td><%= company.active %></td>
+            <td>
+              <%= link_to edit_company_path(company) do %>
+                <i class="glyphicon glyphicon-pencil"></i>
+              <% end %>
+              <%= link_to company, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                <i class="glyphicon glyphicon-trash"></i>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
 
-<br>
+    <%= will_paginate @companies %>
 
-<%= link_to 'New Company', new_company_path %>
+    <br>
+
+    <%= link_to 'New Company', new_company_path %>
+  </div>
+</div>
