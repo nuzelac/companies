@@ -1,0 +1,20 @@
+LineLength:
+  Max: 120
+
+Documentation:
+  Enabled: False
+
+WordArray:
+  Enabled: False
+
+Rails:
+  Enabled: true
+
+AllCops:
+  TargetRubyVersion: 2.4
+  Exclude:
+    - db/schema.rb
+    - config/puma.rb  
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
