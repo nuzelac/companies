@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171122230545) do
+ActiveRecord::Schema.define(version: 20171122232049) do
 
   create_table "companies", force: :cascade do |t|
     t.string "name"
     t.text "comment"
-    t.boolean "active"
+    t.boolean "active", default: true
     t.datetime "deleted"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

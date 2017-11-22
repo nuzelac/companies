@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+500.times do
+  company = Company.create(
+    name: Faker::Company.name,
+    comment: Faker::Company.bs
+  )
+  company.update_attribute(:created_at, rand(365).days.ago)
+end

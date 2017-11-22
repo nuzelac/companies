@@ -4,7 +4,7 @@ class CompaniesController < ApplicationController
   # GET /companies
   # GET /companies.json
   def index
-    @companies = Company.not_deleted
+    @companies = Company.not_deleted.paginate(page: params[:page])
   end
 
   # GET /companies/1

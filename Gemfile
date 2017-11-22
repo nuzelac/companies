@@ -59,6 +59,7 @@ gem 'faker'
 gem 'friendly_id', '~> 5.2.0'
 gem 'jquery-rails'
 gem 'whenever', require: false
+gem 'will_paginate', '~> 3.1.1'
 
 group :development do
   gem 'rails_layout'

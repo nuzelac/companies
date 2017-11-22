@@ -2,9 +2,10 @@
 
 <h1>Companies</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
+      <th>#</th>
       <th>Name</th>
       <th>Comment</th>
       <th>Active</th>
@@ -13,8 +14,9 @@
   </thead>
 
   <tbody>
-    <% @companies.each do |company| %>
+    <% @companies.each_with_index do |company, i| %>
       <tr>
+        <td><%= @companies.offset + i+1 %>
         <td><%= company.name %></td>
         <td><%= company.comment %></td>
         <td><%= company.active %></td>
@@ -25,6 +27,8 @@
     <% end %>
   </tbody>
 </table>
+
+<%= will_paginate @companies %>
 
 <br>
 
