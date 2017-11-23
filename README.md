@@ -1,24 +1,21 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Install
 
-Things you may want to cover:
+```
+$ git clone https://github.com/nuzelac/companies
+$ cd companies
+$ bundle install
+```
 
-* Ruby version
+## Setup
 
-* System dependencies
+Add company creation cronjob and seed companies:
+```
+$ whenever --update-crontab
+$ rails db:seed
+```
 
-* Configuration
+## Run
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Run `rails server`
