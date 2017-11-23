@@ -78,6 +78,8 @@ GEM
       activerecord (>= 4.0.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+    groupdate (3.2.0)
+      activesupport (>= 3)
     i18n (0.9.1)
       concurrent-ruby (~> 1.0)
     jbuilder (2.7.0)
@@ -201,6 +203,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   faker
   friendly_id (~> 5.2.0)
+  groupdate
   jbuilder (~> 2.5)
   jquery-rails
   listen (>= 3.0.5, < 3.2)

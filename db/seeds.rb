@@ -9,7 +9,8 @@
 500.times do
   company = Company.create(
     name: Faker::Company.name,
-    comment: Faker::Company.bs
+    comment: Faker::Company.bs,
+    active: rand(5).positive?
   )
   company.update_attribute(:created_at, rand(365).days.ago)
 end

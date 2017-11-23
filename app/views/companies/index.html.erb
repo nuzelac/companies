@@ -7,7 +7,18 @@
 </div>
 
 <div class="row">
-  <div class="col-md-10">
+  <div class="col-md-6">
+    <%= line_chart Company.not_deleted.group_by_week(:created_at).count, xtitle: 'Week', ytitle: 'Count', title: 'Companies created per week' %>
+  </div>
+
+  <div class="col-md-6">
+    <% sum = 0 %>
+    <%= line_chart Company.not_deleted.group_by_week(:created_at).count.map { |x,y| { x => (sum += y)} }.reduce({}, :merge), xtitle: 'Week', ytitle: 'Total', title: 'Total companies created' %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
 
     <table class="table">
       <thead>
@@ -50,6 +61,6 @@
 
     <br>
 
-    <%= link_to 'New Company', new_company_path %>
+    <%= link_to 'New Company', new_company_path, class: 'btn btn-default' %>
   </div>
 </div>

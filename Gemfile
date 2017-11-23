@@ -57,6 +57,7 @@ gem 'bootstrap-sass'
 gem 'chartkick'
 gem 'faker'
 gem 'friendly_id', '~> 5.2.0'
+gem 'groupdate'
 gem 'jquery-rails'
 gem 'whenever', require: false
 gem 'will_paginate', '~> 3.1.1'
