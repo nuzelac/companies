@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: companies
+#
+#  id         :integer          not null, primary key
+#  name       :string
+#  comment    :text
+#  active     :boolean          default(TRUE)
+#  deleted    :datetime
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  slug       :string
+#
+
 class Company < ApplicationRecord
   extend FriendlyId
 
