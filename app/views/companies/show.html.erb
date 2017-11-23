@@ -1,9 +1,4 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @company.name %>
-</p>
+<h3>Company: <%= @company.name %></h3>
 
 <p>
   <strong>Comment:</strong>
@@ -12,8 +7,8 @@
 
 <p>
   <strong>Active:</strong>
-  <%= @company.active %>
+  <%= @company.active ? 'Yes' : 'No' %>
 </p>
 
-<%= link_to 'Edit', edit_company_path(@company) %> |
-<%= link_to 'Back', companies_path %>
+<%= link_to 'Back', companies_path, class: 'btn btn-default' %>
+<%= link_to 'Edit', edit_company_path(@company), class: 'btn btn-primary' %>
