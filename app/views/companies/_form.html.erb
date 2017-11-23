@@ -1,7 +1,7 @@
 <%= form_with(model: company, local: true) do |form| %>
   <% if company.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(company.errors.count, "error") %> prohibited this company from being saved:</h2>
+      <%= pluralize(company.errors.count, "error") %> prohibited this company from being saved:
 
       <ul>
       <% company.errors.full_messages.each do |message| %>
@@ -11,22 +11,24 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :name %>
-    <%= form.text_field :name, id: :company_name %>
+    <%= form.text_field :name, id: :company_name, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :comment %>
-    <%= form.text_area :comment, id: :company_comment %>
+    <%= form.text_area :comment, id: :company_comment, class: 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= form.label :active %>
-    <%= form.check_box :active, id: :company_active %>
+  <div class="checkbox">
+    <%= form.label :active do %>
+      <%= form.check_box :active, id: :company_active %>
+      Active
+    <% end %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit :Submit, class: 'btn btn-primary' %>
   </div>
 <% end %>

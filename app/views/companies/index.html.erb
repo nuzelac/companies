@@ -7,7 +7,7 @@
 </div>
 
 <div class="row">
-  <div class="col-md-8">
+  <div class="col-md-10">
 
     <table class="table">
       <thead>
@@ -16,6 +16,7 @@
           <th>Name</th>
           <th>Comment</th>
           <th>Active</th>
+          <th>Created on</th>
           <th></th>
         </tr>
       </thead>
@@ -30,7 +31,8 @@
               <% end %>
             </td>
             <td><%= company.comment %></td>
-            <td><%= company.active %></td>
+            <td><i class="glyphicon <%= company.active ? 'glyphicon-ok' : 'glyphicon-remove' %>"></i></td>
+            <td><%= company.created_at.to_date %></td>
             <td>
               <%= link_to edit_company_path(company) do %>
                 <i class="glyphicon glyphicon-pencil"></i>

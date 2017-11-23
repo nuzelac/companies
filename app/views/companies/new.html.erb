@@ -1,5 +1,9 @@
 <h1>New Company</h1>
 
-<%= render 'form', company: @company %>
+<div class="row">
+  <div class="col-md-6">
+    <%= render 'form', company: @company %>
+  </div>
+</div>
 
 <%= link_to 'Back', companies_path %>
