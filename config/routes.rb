@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   resources :companies
   root 'companies#index'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  get 'companies_per_week', controller: :charts
+  get 'cumulative_companies', controller: :charts
 end

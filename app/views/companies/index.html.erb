@@ -8,12 +8,11 @@
 
 <div class="row">
   <div class="col-md-6">
-    <%= line_chart Company.not_deleted.group_by_week(:created_at).count, xtitle: 'Week', ytitle: 'Count', title: 'Companies created per week' %>
+    <%= line_chart companies_per_week_path, xtitle: 'Week', ytitle: 'Count', title: 'Companies created per week' %>
   </div>
 
   <div class="col-md-6">
-    <% sum = 0 %>
-    <%= line_chart Company.not_deleted.group_by_week(:created_at).count.map { |x,y| { x => (sum += y)} }.reduce({}, :merge), xtitle: 'Week', ytitle: 'Total', title: 'Total companies created' %>
+    <%= line_chart cumulative_companies_path, xtitle: 'Week', ytitle: 'Total', title: 'Total companies created' %>
   </div>
 </div>
 
