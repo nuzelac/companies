@@ -19,3 +19,7 @@ $ rails db:seed
 ## Run
 
 Run `rails server`
+
+## Tests
+
+Run `rails test`
